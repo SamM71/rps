@@ -4,8 +4,23 @@ const { determineWinner, compChoose } = require("./rps.js");
 
 let playAgain = true;
 
+const getUserChoice = () => {
+    let userChoice = "";
+    let validInput = false;
+
+    // Ensure user inputs a valid option
+    while (!validInput) {
+        userChoice = prompt("Please choose rock, paper, or scissors: ").toLowerCase();
+        if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
+            validInput = true;
+        }
+    }
+    return userChoice;
+}
+
 const playGame = () => {
-    const userChoice = prompt("Please choose rock, paper, or scissors: ").toLowerCase();
+
+    const userChoice = getUserChoice();
 
     const compChoice = compChoose();
     
