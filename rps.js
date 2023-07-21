@@ -26,4 +26,20 @@ const determineWinner = (userChoice, compChoice) => {
     }
 }
 
-module.exports = determineWinner;
+const compChoose = () => {
+    const num = Math.floor(Math.random() * 3);
+    console.log(num);
+
+    if (num === 0) {
+        return "rock";
+    } else if (num === 1) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
+}
+
+module.exports = {
+    determineWinner,
+    compChoose
+}
